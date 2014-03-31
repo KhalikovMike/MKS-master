@@ -56,7 +56,4 @@ class RequestsController < ApplicationController
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def request_params
-    params.require(:request).permit(:Person, :email, :phone)
-  end
-end
+

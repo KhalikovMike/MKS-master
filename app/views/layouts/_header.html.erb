@@ -10,6 +10,14 @@
           <li><%= link_to "О компании",   about_path %></li>
           <li><%= link_to "Контакты", contact_path %></li>
           <li><a href="http://www.zolotoe-koltso.ru//">Наши партнеры</a></li>
+          <div>
+            <% if current_user %>
+                Signed in as <strong><%= current_user.name %></strong>!
+                <%= link_to "Sign out", signout_path, id: "sign_out" %>
+            <% else %>
+                <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+            <% end %>
+          </div>
         </ul>
       </nav>
     </div>
