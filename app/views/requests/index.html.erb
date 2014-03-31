@@ -18,7 +18,7 @@
         <td><%= request.Person %></td>
         <td><%= request.email %></td>
         <td><%= request.phone %></td>
-        <td><%= image_tag(request.image, :size => "150x200") %></td>
+        <td><%= image_tag(request.image, :size => "100x100") %></td>
         <td><%= button_to 'Удалить', request, method: :delete , data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
