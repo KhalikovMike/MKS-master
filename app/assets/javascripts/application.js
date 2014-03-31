@@ -19,14 +19,4 @@
 
 validate_url = '/emails/validate'
 
-$('#form5, [id^=edit_email_]').validate(
-    debug: true
-rules:
-    'email[email]':
-required: true
-remote:
-    url: validate_url
-type: 'post'
-    url: validate_url
-type: 'post'
-)
+
