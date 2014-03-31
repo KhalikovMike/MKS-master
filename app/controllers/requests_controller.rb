@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :set_request, only: [:edit, :destroy]
+
 
   # GET /requests
   # GET /requests.json
@@ -23,7 +23,7 @@ class RequestsController < ApplicationController
   # POST /requests.json
   def create
     @request = Request.new(request_params)
-
+    params.require(:request).permit(:image)
     respond_to do |format|
       if @request.save
         format.html { redirect_to root_url, notice: 'Request was successfully created.' }
@@ -50,13 +50,13 @@ class RequestsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_request
-      @request = Request.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_request
+    @request = Request.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def request_params
-      params.require(:request).permit(:Person, :email, :phone)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def request_params
+    params.require(:request).permit(:Person, :email, :phone)
+  end
 end

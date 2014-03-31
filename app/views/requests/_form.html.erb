@@ -42,7 +42,11 @@
           <%= f.text_field :phone %>
         </div>
       </div>
+      <%= form_for @request, :html => { :multipart => true } do |f| %>
 
+          <%= f.file_field :image %>
+
+      <% end %>
       <br>
 
       <%= f.submit 'Оставить заявку', class: 'btn btn-success btn-large', id:"btn1"  %>

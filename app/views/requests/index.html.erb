@@ -6,7 +6,7 @@
       <th>Контактное лицо</th>
       <th>Email</th>
       <th>Телефонный номер</th>
-      <th></th>
+      <th>Фото</th>
       <th></th>
       <th></th>
     </tr>
@@ -18,6 +18,7 @@
         <td><%= request.Person %></td>
         <td><%= request.email %></td>
         <td><%= request.phone %></td>
+        <td><%= image_tag(request.image, :size => "150x200") %></td>
         <td><%= button_to 'Удалить', request, method: :delete , data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
