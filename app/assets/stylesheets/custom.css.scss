@@ -1,0 +1,133 @@
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+$grayMediumLight: #007f9c;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* universal */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  #background-image:url(/images/1.jpg);
+  background-color: #ccc;
+ padding-top: 40px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.jumbotron {
+  text-align: center;
+  h1 {
+    margin-bottom: 50px;
+  }
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+  color:green;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: seagreen;
+}
+
+p {
+  font-size: 3.1em;
+  line-height: 1.7em;
+}
+
+
+/* header */
+
+
+#sign {color:gold;
+  text-decoration: none;
+
+  &:hover {
+    color: gold;
+    text-decoration: none;}
+}
+#logo {
+  float: left;
+  margin-right: 70px;
+  font-size: 1.7em;
+  color: green;
+  text-transform: none;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+  background: white;
+  text-decoration: none;
+
+}
+.container {
+
+}
+ul {
+
+}
+
+#btn1 {color:gold;
+  text-decoration: none;
+
+  &:hover {
+    color: gold;
+    text-decoration: underline;
+  }
+
+}
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  color: green;
+  a {
+    color: gold;
+    &:hover {
+      color: gold;
+    }
+  }
+  small {
+    background: white;
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
+}

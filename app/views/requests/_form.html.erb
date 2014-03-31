@@ -1,0 +1,53 @@
+<%= form_for(@request) do |f| %>
+  <% if @request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
+
+      <ul>
+      <% @request.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="form" id="form6">
+      <h2>              </h2>
+      <br>
+
+
+      <div class="form" id="form3">
+        <div class="form" id="form4">
+          <h5>Контактное лицо</h5>
+        </div>
+        <div class="form" id="form5">
+          <%= f.text_field :Person %> <br>
+        </div>
+      </div>
+
+      <div class="form" id="form3">
+        <div class="form" id="form4">
+          <h5>Email</h5>
+        </div>
+        <div class="form" id="form5">
+          <%= f.text_field :email %>
+        </div>
+      </div>
+
+      <div class="form" id="form3">
+        <div class="form" id="form4">
+          <h5>Телефонный номер</h5>
+        </div>
+        <div class="form" id="form5">
+          <%= f.text_field :phone %>
+        </div>
+      </div>
+
+      <br>
+
+      <%= f.submit 'Оставить заявку', class: 'btn btn-success btn-large', id:"btn1"  %>
+
+
+          </div>
+
+      <% end %>

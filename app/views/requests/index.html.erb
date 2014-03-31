@@ -1,0 +1,27 @@
+<h1>Заявки на тур</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Контактное лицо</th>
+      <th>Email</th>
+      <th>Телефонный номер</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @requests.each do |request| %>
+      <tr>
+        <td><%= request.Person %></td>
+        <td><%= request.email %></td>
+        <td><%= request.phone %></td>
+        <td><%= button_to 'Удалить', request, method: :delete , data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
