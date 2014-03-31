@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140331163737) do
+ActiveRecord::Schema.define(version: 20140331164649) do
 
   create_table "requests", force: true do |t|
     t.string   "Person"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140331163737) do
     t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_uid"
   end
 
 end
