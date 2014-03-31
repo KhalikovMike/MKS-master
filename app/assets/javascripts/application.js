@@ -10,7 +10,23 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery.validate
+//= require jquery.validate.additional-methods
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+validate_url = '/emails/validate'
+
+$('#form5, [id^=edit_email_]').validate(
+    debug: true
+rules:
+    'email[email]':
+required: true
+remote:
+    url: validate_url
+type: 'post'
+    url: validate_url
+type: 'post'
+)
