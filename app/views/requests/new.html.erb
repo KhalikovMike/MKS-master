@@ -1,4 +1,82 @@
-<h1>Оставить заявку</h1>
 
-<%= render 'form' %>
+<%= form_for(@request,:html =>{:id => "user_signup_form"}) do |f| %>
+    <% if @request.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+          <ul>
+            <% @request.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
 
+    <div class="field">
+      <%= f.label :Person, "Контактное лицо" %>
+      <br/>
+      <%= f.text_field :Person %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email, "Введите ваш электронный адрес"%>
+      <br/>
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="field">
+      <%= f.label :phone, "Введите ваш телефонный номер" %>
+      <br/>
+      <%= f.text_field :phone %>
+    </div>
+
+    <div class="field">
+      <%= f.label :image, "Введите ваш телефонный номер" %>
+      <br/>
+      <%= f.file_field :image %>
+    </div>
+
+
+
+    <div class="actions">
+      <%= f.submit defined?(@button_label) ? @button_label : "Оставить заявку" %>
+    </div>
+<% end %>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#user_signup_form").validate({
+            rules: {
+                "request[Person]":{
+                    required: true,
+                    minlength: 5
+                },
+                "request[email]":{
+                    required: true,
+                    email: true
+                },
+                "request[phone]":{
+                    required: true,
+                    minlength: 7
+                },
+
+            },
+            messages: {
+                "request[Person]":{
+                    required: "Required",
+                    minlength: "Min Length is 5 characters"
+                },
+                "request[email]":{
+                    required: "Required",
+                    email: "A valid email address is required"
+                },
+                "request[phone]":{
+                    required: "Required",
+                    minlength: "Min Length is 7 characters"
+                },
+
+            }
+        });
+    });
+</script>

@@ -10,13 +10,13 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery.validate
-//= require jquery.validate.additional-methods
 //= require jquery
 //= require jquery_ujs
+//= require jquery.validate
+//= require jquery.validate.additional-methods
 //= require turbolinks
 //= require_tree .
 
-validate_url = '/emails/validate'
+
 
 
